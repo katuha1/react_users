@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
 export default function Users() {
-  const [ users, setUsers ] = useState([]);
+  const [users, setUsers] = useState([]);
   //   const users = [
   //     {
   //       name: "Имя1",
@@ -38,10 +38,10 @@ export default function Users() {
   }, []);
 
   return (
-    <div>
+    <div className="vse">
       {users?.length > 0 ? (
-        <>
-          <div className="card">
+<>
+        {/* <div className="card">
             {users.map((el, id) => (
               <div className="user">
                 <p>{el.name}</p>
@@ -51,10 +51,22 @@ export default function Users() {
                 <p>{el.phone}</p>
               </div>
             ))}
-          </div>
-        </>
+          </div> */}
+          {users.map((el, id) => (
+            <div className="card" key={id}>
+              <div className="user" style={{ width: '18rem' }}>
+                <div className="card-body">
+                  <h5 className="card-title">{el.name} {el.surname} {el.thirname}</h5>
+                  <p className="card-text">Почта: {el.email}</p>
+                  <p className="card-text">Телефон: {el.phone}</p>
+                  <a href="#" className="btn btn-primary">Подробнее</a>
+                </div>
+              </div>
+            </div>
+        ))}
+</>
       ) : (
-        "Пусто"
+      "Пусто"
       )}
       {/* <Outlet></Outlet> */}
     </div>

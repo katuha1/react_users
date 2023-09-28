@@ -6,7 +6,7 @@ export default function User () {
     return(
     <div 
     className="one_users">
-        Пользователь по номером {param.id}
+        Пользователи по номерам {param.id}
     </div>
     )
 }
